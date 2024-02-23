@@ -3,10 +3,9 @@ const bodyParser = require('body-parser');
 
 const app = express();
 
-// Body parser middleware
+
 app.use(bodyParser.urlencoded({ extended: true }));
 
-// Route to show the form
 app.get('/add-product', (req, res) => {
     res.send('<form action="/add-product" method="POST">' +
                 '<input type="text" name="productName" placeholder="Product Name">' +
@@ -26,6 +25,6 @@ app.post('/add-product', (req, res) => {
     res.send('Product added successfully!');
 });
 
-app.listen(PORT, () => {
-    console.log(`Server is running on port ${PORT}`);
+app.listen(6000, () => {
+    console.log("listening on port 6000");
 });
